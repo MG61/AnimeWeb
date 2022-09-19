@@ -9,16 +9,20 @@ public class Anime {
     @GeneratedValue
     public Long id;
 
-    public String name, opis, quantity, img;
+    public String name, opis, quantity, img, type, status, studios, ozvuch;
 
     public Anime() {
     }
 
-    public Anime(String name, String opis,String quantity, String img) {
+    public Anime(String name, String opis, String quantity, String img, String type, String status, String studios, String ozvuch) {
         this.name = name;
         this.opis = opis;
         this.quantity = quantity;
         this.img = img;
+        this.type = type;
+        this.status = status;
+        this.studios = studios;
+        this.ozvuch = ozvuch;
     }
 
     public Long getId() {
@@ -59,5 +63,37 @@ public class Anime {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStudios() {
+        return studios;
+    }
+
+    public void setStudios(String studios) {
+        this.studios = studios;
+    }
+
+    public String getOzvuch() {
+        return ozvuch;
+    }
+
+    public void setOzvuch(String ozvuch) {
+        this.ozvuch = ozvuch;
     }
 }
