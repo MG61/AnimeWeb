@@ -26,9 +26,12 @@ public class MainController {
     @GetMapping("/Anime/{id}")
     public String EmployeeDetails(@PathVariable(value="id") long id, Model model)
     {
+//        Iterable<Anime> anime = animeRepo.findAll();
+//        model.addAttribute("anime",anime);
         Anime anime = animeRepo.findById(id);
         model.addAttribute("anime", anime);
-        return "Home";
+        return "AnimeShow";
     }
+
 
 }

@@ -9,14 +9,15 @@ public class Anime {
     @GeneratedValue
     public Long id;
 
-    public String name, opis, img;
+    public String name, opis, quantity, img;
 
     public Anime() {
     }
 
-    public Anime(String name, String opis, String img) {
+    public Anime(String name, String opis,String quantity, String img) {
         this.name = name;
         this.opis = opis;
+        this.quantity = quantity;
         this.img = img;
     }
 
@@ -42,6 +43,14 @@ public class Anime {
 
     public void setOpis(String opis) {
         this.opis = opis;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
     public String getImg() {
