@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Феникс</title>
+    <style>
+        .container {
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body>
+<header th:insert="Blanks/Head"></header>
+<div class="d-none d-lg-block" style="background-color: rgba(0,0,0,0.04);">
+    <div class="py-3" style="border-top: 1px solid rgba(0,0,0,0.135);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="h2">
+                        ФениксГо — Информация об аниме онлайн бесплатно
+                    </h1>
+                    <div class="read-more-theme-cursor-one">
+                        <div class="read-more-container read-more-bg-body read-more-open" style="max-height: 210px;"
+                             data-readmore="container"
+                             data-readmore-btn-show="<span class=&quot;read-more-text&quot;>Читать дальше</span><svg class=&quot;icon icon-arrow-down&quot;><use xlink:href=&quot;#icon-arrow-down&quot;></use></svg>"
+                             data-readmore-btn-hide="<span class=&quot;read-more-text&quot;>Свернуть</span><svg class=&quot;icon icon-arrow-up&quot;><use xlink:href=&quot;#icon-arrow-up&quot;></use></svg>">
+                            <div data-readmore="content"><p>Вот уже много лет японская анимация пользуется огромным
+                                успехом по всему миру, включая Россию. Эти ленты любят за яркий сюжет, оригинальную
+                                рисовку и неизменный накал эмоций.</p>
+                                <p>Данный сайт предназначен, для получения пользователем информации об аниме</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="py-3" style="background-color: rgba(0,0,0,0.04)" ;>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-8 col-xl-8 mb-3 mb-lg-0 content-block">
+                <div id="content" class="content px-3 pb-3">
+                    <div class="card-header row border-bottom-0">
+                        <div class="h2 mb-0">Новые аниме</div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="media">
+                            <img class="align-self-start mr-3" src="https://animego.org/media/cache/thumbs_300x420/upload/anime/images/6321e088d91c5890130687.jpg" width="200px"/>
+                            <div class="media-body" >
+                                <div th:each="pro:${anime}">
+                                    <a th:href="@{/Anime/{id}(id=${pro.getId()})}" th:text="${pro.getName()}">name</a><br>
+                                    <a th:text="${pro.getOpis()}"></a>
+<!--                                <div class="h5 font-weight-normal mb-1"><a>-->
+<!--                                    Киберпанк: Бегущие по краю</a></div>-->
+<!--                                <div class="description d-none d-sm-block">-->
+<!--                                    Найт-Сити — город будущего, оснащённый всевозможными новейшими технологиями. Город,-->
+<!--                                    где модификация тела не просто мечты безумных учёных, а реальность сродни обычной-->
+<!--                                    покупке. Именно там живёт наш юный герой, для которого этот город не является-->
+<!--                                    чем-то...-->
+<!--                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
