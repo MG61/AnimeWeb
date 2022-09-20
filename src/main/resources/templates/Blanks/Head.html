@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
@@ -18,7 +18,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-primary py-0">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">ФениксГо</a>
+        <a class="navbar-brand" href="/">AniGo</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,14 +29,22 @@
                     <a class="nav-link" href="/Anime">Аниме</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/AnimeAdd">Добавить аниме</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/login">Войти</a>
                 </li>
             </ul>
         </div>
     </div>
-    <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+<!--    th:action="${'/Anime/Search'}"-->
+<!--    <form class="d-flex" role="search" method="post"  >-->
+<!--        <div th:each="pro : ${search}">-->
+<!--        <input th:href="@{/Anime/{id}(id=${pro.getId()})}" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+        <a href="/Anime/Search" class="btn btn-outline-success" type="submit">Поиск</a>
+<!--        </div>-->
+<!--    </form>-->
+    <br>
     </form>
 
 </nav>

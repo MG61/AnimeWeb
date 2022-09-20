@@ -9,19 +9,18 @@ public class Anime {
     @GeneratedValue
     public Long id;
 
-    public String name, opis, quantity, img, type, status, studios, ozvuch;
+    public String name, opis, quantity, img, type, status, ozvuch;
 
     public Anime() {
     }
 
-    public Anime(String name, String opis, String quantity, String img, String type, String status, String studios, String ozvuch) {
+    public Anime(String name, String opis, String quantity, String img, String type, String status, String ozvuch) {
         this.name = name;
         this.opis = opis;
         this.quantity = quantity;
         this.img = img;
         this.type = type;
         this.status = status;
-        this.studios = studios;
         this.ozvuch = ozvuch;
     }
 
@@ -81,13 +80,6 @@ public class Anime {
         this.status = status;
     }
 
-    public String getStudios() {
-        return studios;
-    }
-
-    public void setStudios(String studios) {
-        this.studios = studios;
-    }
 
     public String getOzvuch() {
         return ozvuch;
