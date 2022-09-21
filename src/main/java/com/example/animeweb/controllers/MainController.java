@@ -42,6 +42,12 @@ public class MainController {
     @Autowired
     public SourceRepository sourceRepository;
 
+    @Autowired
+    public GenreRepository genreRepository;
+
+    @Autowired
+    public YearRepository yearRepository;
+
     @GetMapping("/")
     public String Home(Model model)
     {
@@ -96,6 +102,10 @@ public class MainController {
         model.addAttribute("age",age);
         Iterable<Source> source = sourceRepository.findAll();
         model.addAttribute("source",source);
+        Iterable<Genre> genre = genreRepository.findAll();
+        model.addAttribute("genre",genre);
+        Iterable<Year> year = yearRepository.findAll();
+        model.addAttribute("year",year);
         return "animeAdd";
     }
 
@@ -109,6 +119,8 @@ public class MainController {
                            @RequestParam Long mpaa,
                            @RequestParam Long ag,
                            @RequestParam Long sour,
+                           @RequestParam Long yea,
+                           @RequestParam Long genr,
                            BindingResult bindingResult
     ){
         if(bindingResult.hasErrors()) {
@@ -130,6 +142,10 @@ public class MainController {
         anime.setAge(age);
         Source source = sourceRepository.findById(sour).orElseThrow();
         anime.setSource(source);
+        Year year = yearRepository.findById(yea).orElseThrow();
+        anime.setYear(year);
+        Genre genre = genreRepository.findById(genr).orElseThrow();
+        anime.setGenre(genre);
         animeRepo.save(anime);
         return "redirect:/";
     }

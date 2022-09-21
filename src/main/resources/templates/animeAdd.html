@@ -76,6 +76,18 @@
       </div>
     </select><br><br>
 
+    <select name="yea">
+      <div th:each="pro : ${year}">
+        <option th:value="${pro.id}" th:text="${pro.yea}"></option>
+      </div>
+    </select><br><br>
+
+    <select name="genr">
+      <div th:each="pro : ${genre}">
+        <option th:value="${pro.id}" th:text="${pro.genr}"></option>
+      </div>
+    </select><br><br>
+
     <button type="submit" class="btn btn-lg btn-success">Добавить аниме</button><br><br>
   </form>
 </div>

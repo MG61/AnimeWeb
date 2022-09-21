@@ -15,10 +15,11 @@
     </h1>
     <form  method="post" th:action="${'/Anime/Search'}">
         <input type="text" name="name" >
-        <input type="submit" value="Найти" class="btn btn-primary">
+        <input type="submit" value="Найти" class="btn btn-primary"><br><br>
         <div th:each="pro : ${search}">
-            <a th:href="@{/Anime/{id}(id=${pro.getId()})}" th:text="${pro.name}" class="badge text-bg-secondary"></a>
-        </div>
+            <img th:href="@{/Anime/{id}(id=${pro.getId()})}" th:src="${pro.getImg()}" width="200px"/><br>
+            <a th:href="@{/Anime/{id}(id=${pro.getId()})}" th:text="${pro.name}" class="badge text-bg-secondary"></a><br>
+        </div><br>
     </form>
 </div>
 </body>

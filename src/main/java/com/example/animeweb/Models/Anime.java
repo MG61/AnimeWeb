@@ -34,7 +34,13 @@ public class Anime {
     @ManyToOne(optional = true, cascade = CascadeType.ALL)
     private Source source;
 
-    public Anime(String name, String opis, String img, Type type, Quantity quantity, Status status, Ozvuch ozvuch, Studio studio, MPAA mpaa, Age age, Source source) {
+    @ManyToOne(optional = true, cascade = CascadeType.ALL)
+    private Genre genre;
+
+    @ManyToOne(optional = true, cascade = CascadeType.ALL)
+    private Year year;
+
+    public Anime(String name, String opis, String img, Type type, Quantity quantity, Status status, Ozvuch ozvuch, Studio studio, MPAA mpaa, Age age, Source source, Genre genre, Year year) {
         this.name = name;
         this.opis = opis;
         this.img = img;
@@ -46,6 +52,8 @@ public class Anime {
         this.mpaa = mpaa;
         this.age = age;
         this.source = source;
+        this.genre = genre;
+        this.year = year;
     }
 
     public Anime() {
@@ -145,5 +153,21 @@ public class Anime {
 
     public void setSource(Source source) {
         this.source = source;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
+    public Year getYear() {
+        return year;
+    }
+
+    public void setYear(Year year) {
+        this.year = year;
     }
 }

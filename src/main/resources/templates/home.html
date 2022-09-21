@@ -39,9 +39,10 @@
          <div class="row row-cols-1 row-cols-md-3">
             <div class="card text-center text-bg-light mb-3" style="width: 20.6rem;" th:each="pro:${anime}">
                 <div class="card-body">
-                    <img th:src="${pro.getImg()}" width="250px" style="margin-bottom: 10px"/>
-                    <a class="card-title" th:text="${pro.getName()}" style="margin-bottom: 30px">name</a><br>
-                    <a th:href="@{/Anime/{id}(id=${pro.getId()})}" class="btn btn-primary" style="margin-bottom: 20px">Перейти к аниме</a>
+                    <img th:src="${pro.getImg()}" height="300px"/><br>
+                    <h4>
+                        <a class="card-title" th:text="${pro.getName()}">name</a><br><br></h4>
+                    <a th:href="@{/Anime/{id}(id=${pro.getId()})}" class="btn btn-primary">Перейти к аниме</a>
                 </div>
             </div>
         </div>
