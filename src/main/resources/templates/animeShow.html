@@ -27,15 +27,21 @@
                 <span class="badge text-bg-dark">Описание:</span>
                 <a class="badge text-bg-secondary" th:text="${pro.getOpis()}">opis</a><br>
                 <span class="badge text-bg-dark">Количество серий:</span>
-                <a class="badge text-bg-secondary" th:text="${pro.getQuantity()}">quantity</a><br>
+                <a class="badge text-bg-secondary" th:text="${pro.getQuantity().getCol()}">quantity</a><br>
                 <span class="badge text-bg-dark">Тип:</span>
-                <a class="badge text-bg-secondary" th:text="${pro.getType()}">type</a><br>
+                <a class="badge text-bg-secondary" th:text="${pro.getType().getStreet()}">type</a><br>
                 <span class="badge text-bg-dark">Статус:</span>
-                <a class="badge text-bg-secondary" th:text="${pro.getStatus()}">status</a><br>
-<!--                <span class="badge text-bg-dark">Студия:</span>-->
-<!--                <a class="badge text-bg-secondary" th:text="${pro.getStudios()}">studios</a><br>-->
+                <a class="badge text-bg-secondary" th:text="${pro.getStatus().getStat()}">status</a><br>
                 <span class="badge text-bg-dark">Озвучка:</span>
-                <a class="badge text-bg-secondary" th:text="${pro.getOzvuch()}">ozvuch</a><br>
+                <a class="badge text-bg-secondary" th:text="${pro.getOzvuch().getOzv()}">ozvuch</a><br>
+                <span class="badge text-bg-dark">Студия:</span>
+                <a class="badge text-bg-secondary" th:text="${pro.getStudio().getStud()}">studio</a><br>
+                <span class="badge text-bg-dark">Рэйтинг MPAA:</span>
+                <a class="badge text-bg-secondary" th:text="${pro.getMpaa().getMpaa()}">mpaa</a><br>
+                <span class="badge text-bg-dark">Возрастные ограничения:</span>
+                <a class="badge text-bg-secondary" th:text="${pro.getAge().getAg()}">age</a><br>
+                <span class="badge text-bg-dark">Источник:</span>
+                <a class="badge text-bg-secondary" th:text="${pro.getSource().getSour()}">source</a><br>
             </div>
     </h4>
 </div>

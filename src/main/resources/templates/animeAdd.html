@@ -9,19 +9,73 @@
 </head>
 <body>
 <header th:insert="Blanks/Head"/>
-<div align="center" th:each="pro : ${anime}">
+<div align="center">
   <h1>
     <span class="badge text-bg-dark" style="margin-bottom: 20px">Добавление аниме</span>
   </h1>
-  <form action="/Anime/add" method="post" >
-    <input th:text="*{pro.name}" type="text" name="name" placeholder="Имя" required style="margin-bottom: 20px"><br>
-    <input th:text="*{pro.opis}" type="text" name="opis" placeholder="Описание" required style="margin-bottom: 20px"><br>
-    <input th:text="*{pro.quantity}" type="text" name="quantity" placeholder="Количество" required style="margin-bottom: 20px"><br>
-    <input th:text="*{pro.img}" type="text" name="img" placeholder="Картинка" required style="margin-bottom: 20px"><br>
-    <input th:text="*{pro.type}" type="text" name="type" placeholder="Тип" required style="margin-bottom: 20px"><br>
-    <input th:text="*{pro.status}" type="text" name="status" placeholder="Статус" required style="margin-bottom: 20px"><br>
-    <input th:text="*{pro.ozvuch}" type="text" name="ozvuch" placeholder="Озвучка" required style="margin-bottom: 20px"><br>
-<!--    <input th:text="*{pro.studios}" type="text" name="studios" placeholder=Студия" required style="margin-bottom: 20px"><br>-->
+  <form th:action="${'/Anime/add'}" method="post" >
+
+
+    <div th:each="pro : ${anime}">
+    <input th:text="*{pro.name}" type="text" name="name" placeholder="Имя" required style="margin-bottom: 20px">
+    </div><br>
+
+    <div th:each="pro : ${anime}">
+    <input th:text="*{pro.opis}" type="text" name="opis" placeholder="Описание" required style="margin-bottom: 20px">
+    </div><br>
+
+    <div th:each="pro : ${anime}">
+      <input th:text="*{pro.img}" type="text" name="img" placeholder="Картинка" required style="margin-bottom: 20px">
+    </div><br>
+
+    <select name="col">
+      <div th:each="pro : ${quantity}">
+        <option th:value="${pro.id}" th:text="${pro.col}"></option>
+      </div>
+    </select><br><br>
+
+    <select name="street">
+      <div th:each="pro : ${type}">
+        <option th:value="${pro.id}" th:text="${pro.street}"></option>
+      </div>
+    </select><br><br>
+
+    <select name="stat">
+      <div th:each="pro : ${status}">
+        <option th:value="${pro.id}" th:text="${pro.stat}"></option>
+      </div>
+    </select><br><br>
+
+    <select name="ozv">
+      <div th:each="pro : ${ozvuch}">
+        <option th:value="${pro.id}" th:text="${pro.ozv}"></option>
+      </div>
+    </select><br><br>
+
+    <select name="stud">
+      <div th:each="pro : ${studio}">
+        <option th:value="${pro.id}" th:text="${pro.stud}"></option>
+      </div>
+    </select><br><br>
+
+    <select name="mpaa">
+      <div th:each="pro : ${mpaa}">
+        <option th:value="${pro.id}" th:text="${pro.mpaa}"></option>
+      </div>
+    </select><br><br>
+
+    <select name="ag">
+      <div th:each="pro : ${age}">
+        <option th:value="${pro.id}" th:text="${pro.ag}"></option>
+      </div>
+    </select><br><br>
+
+    <select name="sour">
+      <div th:each="pro : ${source}">
+        <option th:value="${pro.id}" th:text="${pro.sour}"></option>
+      </div>
+    </select><br><br>
+
     <button type="submit" class="btn btn-lg btn-success">Добавить аниме</button><br><br>
   </form>
 </div>

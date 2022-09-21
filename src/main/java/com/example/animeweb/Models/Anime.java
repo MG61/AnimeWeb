@@ -1,27 +1,54 @@
 package com.example.animeweb.Models;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Anime {
     @Id
     @GeneratedValue
-    public Long id;
+    private Long id;
 
-    public String name, opis, quantity, img, type, status, ozvuch;
+    private String name, opis, img;
 
-    public Anime() {
-    }
+    @ManyToOne(optional = true, cascade = CascadeType.ALL)
+    private Type type;
 
-    public Anime(String name, String opis, String quantity, String img, String type, String status, String ozvuch) {
+    @ManyToOne(optional = true, cascade = CascadeType.ALL)
+    private Quantity quantity;
+
+    @ManyToOne(optional = true, cascade = CascadeType.ALL)
+    private Status status;
+
+    @ManyToOne(optional = true, cascade = CascadeType.ALL)
+    private Ozvuch ozvuch;
+
+    @ManyToOne(optional = true, cascade = CascadeType.ALL)
+    private Studio studio;
+
+    @ManyToOne(optional = true, cascade = CascadeType.ALL)
+    private MPAA mpaa;
+
+    @ManyToOne(optional = true, cascade = CascadeType.ALL)
+    private Age age;
+
+    @ManyToOne(optional = true, cascade = CascadeType.ALL)
+    private Source source;
+
+    public Anime(String name, String opis, String img, Type type, Quantity quantity, Status status, Ozvuch ozvuch, Studio studio, MPAA mpaa, Age age, Source source) {
         this.name = name;
         this.opis = opis;
-        this.quantity = quantity;
         this.img = img;
         this.type = type;
+        this.quantity = quantity;
         this.status = status;
         this.ozvuch = ozvuch;
+        this.studio = studio;
+        this.mpaa = mpaa;
+        this.age = age;
+        this.source = source;
+    }
+
+    public Anime() {
     }
 
     public Long getId() {
@@ -48,14 +75,6 @@ public class Anime {
         this.opis = opis;
     }
 
-    public String getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
-    }
-
     public String getImg() {
         return img;
     }
@@ -64,28 +83,67 @@ public class Anime {
         this.img = img;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Type type) {
         this.type = type;
     }
 
-    public String getStatus() {
+    public Quantity getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Quantity quantity) {
+        this.quantity = quantity;
+    }
+
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
-
-    public String getOzvuch() {
+    public Ozvuch getOzvuch() {
         return ozvuch;
     }
 
-    public void setOzvuch(String ozvuch) {
+    public void setOzvuch(Ozvuch ozvuch) {
         this.ozvuch = ozvuch;
+    }
+
+    public Studio getStudio() {
+        return studio;
+    }
+
+    public void setStudio(Studio studio) {
+        this.studio = studio;
+    }
+
+    public MPAA getMpaa() {
+        return mpaa;
+    }
+
+    public void setMpaa(MPAA mpaa) {
+        this.mpaa = mpaa;
+    }
+
+    public Age getAge() {
+        return age;
+    }
+
+    public void setAge(Age age) {
+        this.age = age;
+    }
+
+    public Source getSource() {
+        return source;
+    }
+
+    public void setSource(Source source) {
+        this.source = source;
     }
 }
